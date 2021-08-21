@@ -19,10 +19,12 @@ from django.urls.conf import include
 
 from rest_framework import routers
 from produtos.api import viewsets as produtosviewsets
+from compras.api import viewsets as comprasviewsets
 
 route = routers.DefaultRouter()
 
 route.register(r'produtos', produtosviewsets.ProdutosViewSets, basename = 'Produtos')
+route.register(r'compras', comprasviewsets.ComprasViewSets, basename = 'Compras')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
