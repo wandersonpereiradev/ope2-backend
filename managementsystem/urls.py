@@ -18,15 +18,22 @@ from django.urls import path
 from django.urls.conf import include
 
 from rest_framework import routers
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+
+
 from produtos.api import viewsets as produtosviewsets
 from compras.api import viewsets as comprasviewsets
+from usuarios.api import viewsets as usuariosviewsets
 
 route = routers.DefaultRouter()
 
 route.register(r'produtos', produtosviewsets.ProdutosViewSets, basename = 'Produtos')
 route.register(r'compras', comprasviewsets.ComprasViewSets, basename = 'Compras')
+route.register(r'usuarios', usuariosviewsets.UsuariosViewSets, basename = 'Usuarios')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('token/', TokenObtainPairView.as_view()),
+    path('token/refresh/', TokenRefreshView.as_view()),
     path('', include(route.urls)),
 ]
