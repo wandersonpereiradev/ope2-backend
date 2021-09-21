@@ -24,12 +24,14 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from produtos.api import viewsets as produtosviewsets
 from compras.api import viewsets as comprasviewsets
 from usuarios.api import viewsets as usuariosviewsets
+from servicos.api import viewsets as servicosviewsets
 
 route = routers.DefaultRouter()
 
 route.register(r'produtos', produtosviewsets.ProdutosViewSets, basename = 'Produtos')
 route.register(r'compras', comprasviewsets.ComprasViewSets, basename = 'Compras')
 route.register(r'usuarios', usuariosviewsets.UsuariosViewSets, basename = 'Usuarios')
+route.register(r'servicos', servicosviewsets.ServicosViewSets, basename = 'Servicos')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
