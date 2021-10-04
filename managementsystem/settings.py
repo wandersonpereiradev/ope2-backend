@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'rest_framework',
+    'crispy_forms',
     # authentication
     'allauth',
     'allauth.account',
@@ -48,7 +49,12 @@ INSTALLED_APPS = [
     'compras',
     'usuarios',
     'servicos',
+    'venda',
+    'templates',
+    'pages',
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -122,7 +128,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
 TIME_ZONE = 'UTC'
 
@@ -152,3 +158,8 @@ AUTHENTICATION_BACKENDS = [
 
 SITE_ID = 1
 LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/accounts/login"
+ACCOUNT_SESSION_REMEMBER = True
+
+# django-crispy-forms
+CRISPY_TEMPLATE_PACK = "boostrap4"
