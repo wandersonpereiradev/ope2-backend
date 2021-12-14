@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-2f#5rc)=f9nfw=xy^-xzx%a*jei&sfcp3lfmpcxyo@wbieq+@7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -161,3 +161,5 @@ ACCOUNT_SESSION_REMEMBER = True
 
 # django-crispy-forms
 CRISPY_TEMPLATE_PACK = "boostrap4"
+
+django_heroku.settings(locals())
