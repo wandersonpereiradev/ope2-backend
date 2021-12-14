@@ -4,7 +4,7 @@ from datetime import *
 from time import *
 
 class Servicos(models.Model):
-    id_servico = models.UUIDField(primary_key=True, default=uuid4, editable=False)
+    id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
     numero_servico = models.IntegerField
     cliente_id = models.CharField(max_length=255)
     veiculo = models.CharField(max_length=255)
