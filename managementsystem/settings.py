@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'compras',
     'usuarios',
     'servicos',
+    'clientes',
     'corsheaders'
 ]
 CORS_ORIGIN_ALLOW_ALL = True
