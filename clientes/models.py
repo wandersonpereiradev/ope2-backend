@@ -9,5 +9,4 @@ class Clientes(models.Model):
     email = models.EmailField
     contato = models.CharField(max_length=255)
     veiculo = models.CharField(max_length=255)
-    placa = models.CharField(max_length=255)
 
